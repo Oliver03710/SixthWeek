@@ -15,6 +15,12 @@ class CardCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
+        print(CardCollectionViewCell.reuseIdentifier, #function)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        cardView.contentLabel.text = nil
     }
     
     func setupUI() {

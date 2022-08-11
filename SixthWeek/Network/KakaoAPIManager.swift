@@ -41,13 +41,4 @@ class KakaoAPIManager {
         }
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

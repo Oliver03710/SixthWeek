@@ -39,6 +39,10 @@ class CardView: UIView {
         view.frame = bounds
         view.backgroundColor = .lightGray
         self.addSubview(view)
+        
+        // 카드뷰를 인터페이스 빌더 기반으로 만들고, 레이아웃도 설정했는데 true로 나옴
+        // 뷰는 위에서 보면 알 수 있듯이, 코드로 추가한 UI이기 때문에 오토리사이징이 내부적으로 처리 됨.
+        print(view.translatesAutoresizingMaskIntoConstraints)
     }
     
 }
