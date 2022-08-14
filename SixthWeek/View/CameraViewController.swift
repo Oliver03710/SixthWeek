@@ -17,6 +17,7 @@ class CameraViewController: UIViewController {
     // MARK: - Properties
     
     @IBOutlet weak var resultImageView: UIImageView!
+    @IBOutlet weak var phPickerButton: UIButton!
     
     // UIImagePickerController 1.
     let picker = UIImagePickerController()
@@ -24,15 +25,22 @@ class CameraViewController: UIViewController {
     var itemPrividers: [NSItemProvider] = []
     var iterator: IndexingIterator<[NSItemProvider]>?
     
+    private var itemQuantityDescription: String? {
+        didSet {
+            phPickerButton.setNeedsUpdateConfiguration()
+        }
+    }
+    
     
     // MARK: - Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         // UIImagePickerController 2.
         picker.delegate = self
+        
+        configureButtons()
     }
     
     
@@ -54,6 +62,38 @@ class CameraViewController: UIViewController {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         displayNextImage()
+    }
+    
+    func configureButtons() {
+        
+        var configuration = UIButton.Configuration.tinted()
+        configuration.title = "PHPicker Button With Configuration"
+        configuration.subtitle = "Subtitles"
+//        configuration.showsActivityIndicator = true
+//        configuration.image = UIImage(systemName: "star.fill")
+        configuration.imagePlacement = .leading
+        configuration.imagePadding = 20
+        
+        phPickerButton.configuration = configuration
+        
+        phPickerButton.configurationUpdateHandler = { button in
+            var config = button.configuration
+            config?.image = button.isHighlighted ? UIImage(systemName: "cart.fill.badge.plus") : UIImage(systemName: "cart.badge.plus")
+            button.configuration = config
+            
+        }
+        
+//        phPickerButton.configurationUpdateHandler = {
+//
+//            [unowned self] button in
+//
+//            var config = button.configuration
+//            config?.image = button.isHighlighted ? UIImage(systemName: "cart.fill.badge.plus") : UIImage(systemName: "cart.badge.plus")
+//            config?.subtitle = self.itemQuantityDescription
+//            button.configuration = config
+//
+            
+        
     }
     
     
@@ -208,6 +248,8 @@ extension CameraViewController: PHPickerViewControllerDelegate {
         iterator = itemPrividers.makeIterator()
         displayNextImage()
     }
+    
+    
     
 }
 

@@ -322,7 +322,6 @@
         <!--Camera View Controller-->
         <scene sceneID="dte-ZA-8nJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="R2m-Jc-A4q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="cMB-2i-Kde" customClass="CameraViewController" customModule="SixthWeek" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bOU-SI-hw4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -435,9 +434,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="phPickerButton" destination="2hS-0f-Oy9" id="3AM-f4-Keg"/>
                         <outlet property="resultImageView" destination="U3C-9w-Sqt" id="vIf-c0-azC"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R2m-Jc-A4q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4850" y="135"/>
         </scene>
