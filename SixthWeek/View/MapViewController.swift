@@ -39,6 +39,7 @@ class MapViewController: UIViewController {
         
         // Location 3. 프로토콜 연결
         locationManager.delegate = self
+        mapView.delegate = self
 
         // 지도 중심 설정
         let center = CLLocationCoordinate2D(latitude: 37.553409, longitude: 126.969734)
@@ -167,6 +168,7 @@ extension MapViewController: CLLocationManagerDelegate {
         
         //ex. 위도 경도 기반으로 날씨 정보를 조회
         //ex. 지도를 다시 세팅
+        
         if let coordinate = locations.last?.coordinate {
 //            let center = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
 //            setRegionAndAnnotation(center: center)

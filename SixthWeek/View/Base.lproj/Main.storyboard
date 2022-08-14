@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6PB-Ua-459">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cMB-2i-Kde">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -319,6 +319,128 @@
             </objects>
             <point key="canvasLocation" x="3926" y="135"/>
         </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="dte-ZA-8nJ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R2m-Jc-A4q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="cMB-2i-Kde" customClass="CameraViewController" customModule="SixthWeek" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bOU-SI-hw4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6m-Ew-fyY">
+                                <rect key="frame" x="20" y="64" width="335" height="50"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.98823529409999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="MOj-H1-FSt"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="YPImagePicker Button"/>
+                                <connections>
+                                    <action selector="YPImagePickerButtonClicked:" destination="cMB-2i-Kde" eventType="touchUpInside" id="gSq-t1-P4w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAy-dN-SmL">
+                                <rect key="frame" x="20" y="134" width="335" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="65p-UU-SqQ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Camera Button"/>
+                                <connections>
+                                    <action selector="cameraButtonClicked:" destination="cMB-2i-Kde" eventType="touchUpInside" id="Lv2-4k-IpY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvE-eA-MDv">
+                                <rect key="frame" x="20" y="204" width="335" height="50"/>
+                                <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YwP-H4-6zN"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Photo Library Button"/>
+                                <connections>
+                                    <action selector="photoLibraryButtonClicked:" destination="cMB-2i-Kde" eventType="touchUpInside" id="nAr-bR-ceG"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U3C-9w-Sqt">
+                                <rect key="frame" x="20" y="274" width="335" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="y1M-m7-N61"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIe-rs-ygM">
+                                <rect key="frame" x="20" y="494" width="335" height="50"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.64169254129999997" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="anD-xL-edK"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save To Photo Library Button"/>
+                                <connections>
+                                    <action selector="saveToPhotoLibrary:" destination="cMB-2i-Kde" eventType="touchUpInside" id="S62-52-ka0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pjN-El-5DN">
+                                <rect key="frame" x="20" y="564" width="335" height="50"/>
+                                <color key="backgroundColor" red="0.30196078430000001" green="0.41568627450000001" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jzJ-fA-HuH"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="CLOVA Face Button"/>
+                                <connections>
+                                    <action selector="clovaFaceButtonClicked:" destination="cMB-2i-Kde" eventType="touchUpInside" id="VP2-Fe-Nbb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hS-0f-Oy9">
+                                <rect key="frame" x="20" y="634" width="335" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="MnL-bw-dl1"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="PHPicker Button"/>
+                                <connections>
+                                    <action selector="PHPickerButtonTapped:" destination="cMB-2i-Kde" eventType="touchUpInside" id="mVO-nN-JhP"/>
+                                    <action selector="clovaFaceButtonClicked:" destination="cMB-2i-Kde" eventType="touchUpInside" id="gvG-5c-TLH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Gvb-0Q-Y0a"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pjN-El-5DN" firstAttribute="leading" secondItem="Gvb-0Q-Y0a" secondAttribute="leading" constant="20" id="1Os-lg-p5K"/>
+                            <constraint firstItem="Gvb-0Q-Y0a" firstAttribute="trailing" secondItem="nvE-eA-MDv" secondAttribute="trailing" constant="20" id="4j2-w9-soA"/>
+                            <constraint firstItem="Gvb-0Q-Y0a" firstAttribute="trailing" secondItem="nAy-dN-SmL" secondAttribute="trailing" constant="20" id="CGs-vf-EJH"/>
+                            <constraint firstItem="pjN-El-5DN" firstAttribute="top" secondItem="EIe-rs-ygM" secondAttribute="bottom" constant="20" id="Deb-zX-JRx"/>
+                            <constraint firstItem="Gvb-0Q-Y0a" firstAttribute="trailing" secondItem="O6m-Ew-fyY" secondAttribute="trailing" constant="20" id="Hce-TA-M29"/>
+                            <constraint firstItem="nvE-eA-MDv" firstAttribute="top" secondItem="nAy-dN-SmL" secondAttribute="bottom" constant="20" id="L6F-l3-dFa"/>
+                            <constraint firstItem="Gvb-0Q-Y0a" firstAttribute="trailing" secondItem="2hS-0f-Oy9" secondAttribute="trailing" constant="20" id="MH7-R6-qmT"/>
+                            <constraint firstItem="2hS-0f-Oy9" firstAttribute="top" secondItem="pjN-El-5DN" secondAttribute="bottom" constant="20" id="Ne0-RJ-v8O"/>
+                            <constraint firstItem="2hS-0f-Oy9" firstAttribute="leading" secondItem="Gvb-0Q-Y0a" secondAttribute="leading" constant="20" id="Omh-T7-A9Y"/>
+                            <constraint firstItem="nvE-eA-MDv" firstAttribute="leading" secondItem="Gvb-0Q-Y0a" secondAttribute="leading" constant="20" id="SdX-6s-wBN"/>
+                            <constraint firstItem="EIe-rs-ygM" firstAttribute="leading" secondItem="Gvb-0Q-Y0a" secondAttribute="leading" constant="20" id="Tid-Hb-Swq"/>
+                            <constraint firstItem="nAy-dN-SmL" firstAttribute="leading" secondItem="Gvb-0Q-Y0a" secondAttribute="leading" constant="20" id="W4Z-8t-dBf"/>
+                            <constraint firstItem="Gvb-0Q-Y0a" firstAttribute="trailing" secondItem="EIe-rs-ygM" secondAttribute="trailing" constant="20" id="a1p-Kb-2pw"/>
+                            <constraint firstItem="EIe-rs-ygM" firstAttribute="top" secondItem="U3C-9w-Sqt" secondAttribute="bottom" constant="20" id="cMr-nc-jhv"/>
+                            <constraint firstItem="nAy-dN-SmL" firstAttribute="top" secondItem="O6m-Ew-fyY" secondAttribute="bottom" constant="20" id="d8b-CJ-O3K"/>
+                            <constraint firstItem="O6m-Ew-fyY" firstAttribute="top" secondItem="Gvb-0Q-Y0a" secondAttribute="top" constant="20" id="eSI-Uv-fcq"/>
+                            <constraint firstItem="Gvb-0Q-Y0a" firstAttribute="trailing" secondItem="pjN-El-5DN" secondAttribute="trailing" constant="20" id="evN-me-ofR"/>
+                            <constraint firstItem="U3C-9w-Sqt" firstAttribute="leading" secondItem="Gvb-0Q-Y0a" secondAttribute="leading" constant="20" id="g92-20-Y7Q"/>
+                            <constraint firstItem="O6m-Ew-fyY" firstAttribute="leading" secondItem="Gvb-0Q-Y0a" secondAttribute="leading" constant="20" id="taY-dK-X0d"/>
+                            <constraint firstItem="U3C-9w-Sqt" firstAttribute="top" secondItem="nvE-eA-MDv" secondAttribute="bottom" constant="20" id="uLb-yh-hMM"/>
+                            <constraint firstItem="Gvb-0Q-Y0a" firstAttribute="trailing" secondItem="U3C-9w-Sqt" secondAttribute="trailing" constant="20" id="zmm-Eq-Lay"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="resultImageView" destination="U3C-9w-Sqt" id="vIf-c0-azC"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="4850" y="135"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="kxA-GU-kI7">
             <objects>
@@ -352,6 +474,15 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
