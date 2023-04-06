@@ -233,17 +233,6 @@ extension CameraViewController: PHPickerViewControllerDelegate {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         dismiss(animated: true)
         
-//        if let itemProvider = results.first?.itemProvider, itemProvider.canLoadObject(ofClass: UIImage.self) {
-//
-//            let previousImage = resultImageView.image
-//            itemProvider.loadObject(ofClass: UIImage.self) { [weak self] image, error in
-//                DispatchQueue.main.async {
-//                    guard let self = self, let image = image as? UIImage, self.resultImageView.image == previousImage else { return }
-//                    self.resultImageView.image = image
-//                }
-//            }
-//        }
-        
         itemPrividers = results.map(\.itemProvider)
         iterator = itemPrividers.makeIterator()
         displayNextImage()

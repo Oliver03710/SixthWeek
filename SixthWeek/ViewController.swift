@@ -29,10 +29,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var blogList: [String] = []
-    var cafeList: [String] = []
+    private var blogList: [String] = []
+    private var cafeList: [String] = []
     
-    var isExpanded = false  // false: 두줄 / true: 0줄
+    private var isExpanded = false  // false: 두줄 / true: 0줄
     
     
     // MARK: - Init
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
     
     // MARK: - Network
     
-    func searchBlog() {
+    private func searchBlog() {
         
         KakaoAPIManager.shared.callRequest(type: .blog, query: "고래밥") { json in
             
@@ -63,7 +63,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func searchCafe() {
+    private func searchCafe() {
         
         KakaoAPIManager.shared.callRequest(type: .cafe, query: "고래밥") { json in
             

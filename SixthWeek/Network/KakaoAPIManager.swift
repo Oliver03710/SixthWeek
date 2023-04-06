@@ -10,13 +10,18 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+struct User {
+    fileprivate let name = "고래밥"
+    private let age = 11
+}
+
 class KakaoAPIManager {
     
     private init() { }
     
     static let shared = KakaoAPIManager()
     
-    let header: HTTPHeaders = ["Authorization": "KakaoAK \(APIKey.kakao)"]
+    private let header: HTTPHeaders = ["Authorization": "KakaoAK \(APIKey.kakao)"]
     
     // Alarmofire + SwiftyJSON
     // 검색키워드
